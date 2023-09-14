@@ -1,0 +1,178 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{style2017}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks =false,
+    linkcolor=blue,
+   linkbordercolor = 1 0 0
+}
+\newcounter{numexo}
+\setcellgapes{1pt}
+\newcommand{\nd}{n\oe{}ud~}
+\newcommand{\Nd}{N\oe{}ud~}
+\newcommand{\nds}{n\oe{}uds~}
+\renewcommand{\arraystretch}{2}
+
+
+\begin{document}
+
+\begin{NSI}
+{Exercice}{Complexité d'un algorithme}
+\end{NSI}
+
+
+
+
+\addtocounter{numexo}{1}
+\section*{\Large Exercice \thenumexo}
+
+\textit{Dans cet exercice, on considère des tableaux de nombres entiers. On n'utilise pas les fonctions de recherche de maximum, minimum et de somme prédéfinies dans Python.}
+
+\subsubsection*{Recherche du minimum}
+
+\begin{enumerate}
+\item Écrire un algorithme qui recherche la valeur minimale d'un tableau non trié de 20 nombres.
+\item Déterminer le nombre d'itérations nécessaires pour trouver le minimum d'un tableau contenant 20 nombres.
+\item Écrire, en Python, la fonction \textsf{recherche\_minimum} qui prend en paramètre un tableau de nombres et renvoie la valeur minimale du tableau quelle que soit sa dimension.
+\item Quelle est la complexité de votre algorithme.
+\end{enumerate}
+
+\subsubsection*{Recherche du maximum}
+
+\begin{enumerate}
+\item Transformer l'algorithme précédent pour rechercher la valeur maximale d'un tableau.
+\item Qu'en est-il de la complexité de l'algorithme ?
+\end{enumerate}
+
+
+\subsubsection*{Somme}
+
+\begin{enumerate}
+\item Écrire un algorithme qui calcule la somme des valeurs d'un tableau.
+\item Quelle est la complexité de votre algorithme ?
+\end{enumerate}
+
+
+\addtocounter{numexo}{1}
+\section*{\Large Exercice \thenumexo}
+
+\begin{enumerate}
+\item Écrire un algorithme (itératif ou récursif) qui recherche la valeur minimale dans un arbre binaire de recherche.
+
+\item Écrire un algorithme qui recherche la valeur maximale dans un arbre binaire de recherche.
+
+\item On donne l'ABR ci-dessous:
+
+\begin{center}
+\psset{unit=1cm}
+\begin{pspicture}(4,4)
+% Noeud racine
+\cnodeput(2,3.7){A}{11}
+% Sous-arbre gauche
+\cnodeput(1.2,2.7){B}{7}
+%% Sous-arbre gauche
+\cnodeput(0.7,1.7){D}{3}
+%% Sous-arbre droit
+\cnodeput(1.7,1.7){E}{9}
+% Sous-arbre droit
+\cnodeput(2.8,2.7){C}{15}
+%% Sous-arbre gauche
+%\cnodeput(2.4,1.7){F}{13}
+%% Sous-arbre droit
+%\cnodeput(3.2,1.7){G}{17}
+\ncline{A}{B}
+\ncline{A}{C}
+\ncline{B}{D}
+\ncline{B}{E}
+%\ncline{C}{F}
+%\ncline{C}{G}
+\end{pspicture}
+\end{center}
+
+
+Combien d'appels récursifs ou itérations sont effectués pour obtenir la valeur minimale ? la valeur maximale ?
+
+\item Représenter l'arbre binaire de recherche contenant, dans cet ordre, les valeurs $15$, $17$, $13$, $10$, $11$ et $16$.
+
+\begin{enumerate}
+\item Combien d'appels récursifs ou itérations sont nécessaires pour obtenir la valeur minimale ? la valeur maximale ?
+\item On ajoute la valeur $14$. Est-ce que cela change le nombre d'appels récursifs ?
+\item On ajoute la valeur $4$. Le nombre d'appels récursifs est-il modifié.
+\end{enumerate}
+
+\item Quelle est la complexité de l'algorithme de recherche de la valeur minimale ? valeur maximale ?
+
+\item Que peut-on dire de la complexité de l'algorithme de recherche de la valeur minimale si l'arbre binaire de recherche est équilibré ?
+
+
+\end{enumerate}
+
+
+%\addtocounter{numexo}{1}
+%\subsection*{\Large Exercice \thenumexo}
+%
+%En utilisant les observations de l'exercice précédent, écrire une fonction \textbf{saisie\_ABR\_complet} qui prend en paramètre la hauteur de l'arbre et renvoie un ABR complet.\medskip
+%
+%
+%Par exemple \textbf{saisie\_ABR\_complet(3)} renvoie l'arbre:\medskip
+%
+%Noeud(4,\Nd(2,\Nd(1,None,None),\Nd(3,None,None)),\Nd(6,\Nd(5,None,None),\Nd(7,None,None)))
+%
+%\begin{center}
+%\includegraphics[scale=0.8]{img/abr-complet-3.eps}
+%\end{center}
+
+
+%\addtocounter{numexo}{1}
+%\subsection*{\Large Exercice \thenumexo}
+
+
+
+%
+%\begin{enumerate}
+%\item \begin{enumerate}
+%\item Écrire une fonction \textbf{liste\_alea} qui prend en paramètre la longueur $n$ désirée d'une liste et renvoie une liste de nombres choisis aléatoirement entre 1 et $10n$. On veillera à ce que la liste ne contienne aucun doublon et elle n'est pas triée.
+%\item Écrire une fonction \textbf{ABR\_alea} qui prend en paramètre la taille $n$ désirée d'un ABR et renvoie un ABR de nombres choisis aléatoirement entre 1 et $10n$.
+%\item Avec le module \textbf{timeit}, comparer les temps de construction des 2 structures de données liste et ABR pour différentes dimensions de $n$. 
+%
+%Compléter le tableau ci-dessous:
+%
+%\begin{center}
+%\begin{tabular}{|C{2cm}*{2}{|C{4cm}}|}\hline
+%$n$ & liste & ABR\\\hline
+%$10$ & & \\\hline
+%$100$ & & \\\hline
+%$1000$ & & \\\hline
+%$5000$ & & \\\hline
+%$10000$ & & \\\hline
+%$20000$ & & \\\hline
+%$50000$ & & \\\hline
+%\end{tabular}
+%\end{center}
+%\end{enumerate}
+%\item \begin{enumerate}
+%\item Écrire une fonction \textbf{liste\_en\_ABR} qui prend en paramètre une liste et renvoie les valeurs de la liste dans un ABR.
+%\item Écrire une fonction \textbf{ABR\_en\_liste} qui prend en paramètre un ABR et renvoie les valeurs de l'ABR dans une liste.
+%\item Écrire une fonction \textbf{ABR\_en\_liste\_tri}  qui prend en paramètre un ABR et renvoie les valeurs de l'ABR triées dans une liste.
+%\end{enumerate}
+%\item Écrire une fonction qui trie une liste de nombres entiers en utilisant un ABR.
+%\item Comparer les temps de recherche d'un nombre dans une liste et dans un ABR selon les dimensions de chaque structure de données.
+%\end{enumerate}
+
+%\bigskip
+%
+%\addtocounter{numexo}{1}
+%\subsection*{\Large Problèmes ouverts}
+%\begin{enumerate}
+%\item Créer un ABR bien tassé avec les lettres de l'alphabet.
+%\item \begin{enumerate}
+%\item Créer un programme, en Python, qui lit le fichier de la fable de La Fontaine, \textbf{la cigale et la fourmi}, et crée un dictionnaire contenant les lettres présentes dans la fable avec leur fréquence (arrondie au dixième) d'apparition.
+%\item Créer un programme, en Python, qui crée un ABR (bien équilibré si possible) contenant les lettres de la fable, tel qu'un parcours de l'arbre donne les lettres de la plus fréquente à la moins fréquente dans le texte.
+%\end{enumerate} 
+%\end{enumerate}
+
+
+
+\end{document}
